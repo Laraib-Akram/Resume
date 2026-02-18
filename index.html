@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laraib Akram | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a2a6c; /* Deep Navy */
+            --primary-gradient: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d); /* Elegant Gradient */
+            --bg-gradient: linear-gradient(135deg, #1a2a6c 0%, #2a407c 100%);
+            --accent: #d4af37; /* Gold */
+            --text-dark: #2c3e50;
+            --text-light: #ffffff;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+
+        /* Header / Hero Section */
+        header {
+            background: var(--bg-gradient);
+            color: var(--text-light);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--accent);
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            background-color: #fff;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            padding: 5px 15px;
+            border-radius: 4px;
+        }
+
+        .tagline:hover {
+            color: #fff;
+            border-color: var(--accent);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .contact-bar span, .contact-bar a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .contact-bar a:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .contact-bar i {
+            color: var(--accent);
+        }
+
+        /* Sections General */
+        section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin: 10px auto 0;
+        }
+
+        .section-header p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-box {
+            background: var(--bg-white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--accent);
+            font-size: 1.1rem;
+            text-align: left;
+            color: #555;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-box p {
+            margin-bottom: 15px;
+        }
+
+        /* Experience Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+        }
+
+        .card.featured::before {
+            background: var(--accent);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .card-subtitle {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card-detail {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .card li::before {
+            content: '•';
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        .skills-wrapper {
+            background: var(--bg-white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .skill-category {
+            margin-bottom: 30px;
+        }
+
+        .skill-category h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #f0f4f8;
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid #e1e8ed;
+        }
+
+        /* Contact Section */
+        footer {
+            background: var(--primary);
+            color: var(--text-light);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .form-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--accent);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1);
+            color: var(--text-light);
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .btn-submit {
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background: #fff;
+            transform: scale(1.02);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .hero-content { padding-top: 20px; }
+            .contact-bar { flex-direction: column; align-items: center; gap: 10px; }
+            section { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="hero-content">
+            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEh3ketSxBuGEc9GWhN9657O5GJoY9A8-yeQYYwQ5154_vKamPhr88PzPzshcHD1fXWEr5JpXsHNGloI37JLw_eCdlhfTH5bmRGZxE63abix7AWon6Txd69aRBWLsfv_b_tApM4UQmPAapvY30QaNoVdgHk0Y329F5Csii_5ptG50fjyS0I6gX7-Ve9g0Ss" alt="Laraib Akram" class="profile-img">
+            <h1>Laraib Akram</h1>
+            <a href="https://github.com/laraib08/Resume/releases/download/Personal/Laraib.Akram.pdf" class="tagline" target="_blank">Download My Resume</a>
+            <div class="contact-bar">
+                <a href="tel:+923295103481"><i class="fas fa-phone"></i> +92 329 5103481</a>
+                <a href="mailto:laraibakramofficial@gmail.com"><i class="fas fa-envelope"></i> laraibakramofficial@gmail.com</a>
+                <span><i class="fas fa-map-marker-alt"></i> Lahore / Rawalpindi</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="section-header">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-box">
+            <p>
+                I am a multi-talented professional who thrives at the intersection of structure and creativity. My professional journey began in the world of <strong>Accounting and Administration</strong> at Garrison, where I developed a keen eye for detail, mastery of office operations, and a passion for exceptional customer service. 
+            </p>
+            <p>
+                With a strong academic background in <strong>Computer Science</strong> and specialized certifications in <strong>Dropshipping</strong>, I have always been driven by digital innovation. Recently, I transitioned into <strong>Social Media Management and Graphic Design</strong>, allowing me to combine my analytical mindset with a fresh, creative perspective. 
+            </p>
+            <p>
+                Whether I am balancing financial records, leading a team, or crafting engaging digital content, I am committed to clarity, efficiency, and human connection. I am a lifelong learner and a proactive problem-solver, ready to adapt and deliver value wherever the next challenge takes me.
+            </p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-header">
+            <h2>Professional Experience</h2>
+            <p>A diverse career path combining Administration, Creative Design, and Accounting</p>
+        </div>
+        <div class="grid-container">
+            <!-- New Job: Social Media Manager -->
+            <div class="card featured">
+                <h3>Social Media Manager</h3>
+                <span class="card-subtitle">Remote / Freelance</span>
+                <div class="card-detail">Dec 10, 2025 - Present</div>
+                <ul>
+                    <li>Developing and executing social media strategies to increase brand awareness.</li>
+                    <li>Managing content calendars and engagement across various platforms.</li>
+                    <li>Analyzing performance metrics to optimize reach and audience growth.</li>
+                    <li>Collaborating with teams to ensure consistent brand voice.</li>
+                </ul>
+            </div>
+
+            <!-- New Job: Graphic Designing -->
+            <div class="card featured">
+                <h3>Graphic Designer</h3>
+                <span class="card-subtitle">Creative Services</span>
+                <div class="card-detail">Dec 10, 2025 - Present</div>
+                <ul>
+                    <li>Creating visually compelling designs for digital and print media.</li>
+                    <li>Designing social media posts, marketing materials, and brand assets.</li>
+                    <li>Translating client requirements into high-impact visual concepts.</li>
+                    <li>Ensuring high quality and consistency across all design projects.</li>
+                </ul>
+            </div>
+
+            <!-- Job 1 -->
+            <div class="card">
+                <h3>Receptionist & Accountant</h3>
+                <span class="card-subtitle">Garrison - Rawalpindi</span>
+                <div class="card-detail">Nov 2024 - Present</div>
+                <ul>
+                    <li>Experienced receptionist handling front-desk operations.</li>
+                    <li>Customer care and call-back management.</li>
+                    <li>Sales management responsibilities.</li>
+                    <li>Social media team leader and all-rounder.</li>
+                </ul>
+            </div>
+
+            <!-- Job 2 -->
+            <div class="card">
+                <h3>Administration</h3>
+                <span class="card-subtitle">Garrison - Lahore</span>
+                <div class="card-detail">Oct 2025 - Dec 2025</div>
+                <ul>
+                    <li>Scheduled meetings, appointments, and travel arrangements.</li>
+                    <li>Managed office supplies and daily operations inventory.</li>
+                    <li>Maintained confidential files and prepared reports.</li>
+                    <li>Coordinated office events and team-building activities.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header">
+            <h2>Skills & Expertise</h2>
+        </div>
+        <div class="skills-wrapper">
+            <div class="grid-container">
+                <div class="skill-category">
+                    <h4><i class="fas fa-paint-brush" style="color:var(--primary); margin-right:10px;"></i>Creative & Digital</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Graphic Design</span>
+                        <span class="skill-tag">Social Media Management</span>
+                        <span class="skill-tag">Content Creation</span>
+                        <span class="skill-tag">Digital Marketing</span>
+                        <span class="skill-tag">Branding</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-laptop-code" style="color:var(--primary); margin-right:10px;"></i>Technical & Office</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Microsoft Office</span>
+                        <span class="skill-tag">Microsoft Excel</span>
+                        <span class="skill-tag">PowerPoint</span>
+                        <span class="skill-tag">Word</span>
+                        <span class="skill-tag">Data Entry</span>
+                        <span class="skill-tag">Typing</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-users" style="color:var(--primary); margin-right:10px;"></i>Interpersonal</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Customer Service</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Team Leadership</span>
+                        <span class="skill-tag">Problem Handling</span>
+                        <span class="skill-tag">Phone Etiquette</span>
+                        <span class="skill-tag">Organization</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-certificate" style="color:var(--primary); margin-right:10px;"></i>Certifications</h4>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Dropshipping (Shopify/Amazon)</span>
+                        <span class="skill-tag">Driver's License</span>
+                        <span class="skill-tag">Computer Science (Inter)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="section-header" style="margin-bottom: 30px;">
+            <h2 style="color: white;">Get in Touch</h2>
+            <p style="color: rgba(255,255,255,0.7);">I am willing to relocate anywhere. Let's discuss how I can add value to your team.</p>
+        </div>
+        <div class="form-box">
+            <form action="https://formspree.io/f/xdalzbee" method="POST">
+                <div class="form-group">
+                    <label>Your Email Address</label>
+                    <input type="email" name="email" class="form-control" placeholder="name@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Message</label>
+                    <textarea name="message" class="form-control" rows="4" placeholder="How can I assist you?" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </footer>
+
+</body>
+</html>
